@@ -1,0 +1,105 @@
+#include <iostream>
+using namespace std;
+
+class student
+{
+private:
+    string name;
+    int rollNo;
+    int age;
+    string branch;
+    string college;
+
+    int physicsmarks;
+    int mathsmarks;
+    int chemistrymarks;
+    int hindimarks;
+    int englishmarks;
+
+    float average;
+
+public:
+
+    void getData()
+    {
+        cout << "Enter student name: ";
+        cin >> name;
+
+        cout << "Enter roll number: ";
+        cin >> rollNo;
+
+        cout << "Enter age: ";
+        cin >> age;
+
+        cout << "Enter branch: ";
+        cin >> branch;
+
+        cout << "Enter college: ";
+        cin >> college;
+
+        cout << "Enter physics marks: ";
+        cin >> physicsmarks;
+
+        cout << "Enter chemistry marks: ";
+        cin >> chemistrymarks;
+
+        cout << "Enter maths marks: ";
+        cin >> mathsmarks;
+
+        cout << "Enter english marks: ";
+        cin >> englishmarks;
+
+        cout << "Enter hindi marks: ";
+        cin >> hindimarks;
+    }
+
+    void calculateAverage()
+    {
+        int total = physicsmarks + chemistrymarks + mathsmarks
+                    + englishmarks + hindimarks;
+
+        average = total / 5.0;
+    }
+
+    char calculateGrade()
+    {
+        if (average >= 90)
+            return 'A';
+        else if (average >= 80)
+            return 'B';
+        else if (average >= 70)
+            return 'C';
+        else if (average >= 60)
+            return 'D';
+        else if (average >= 50)
+            return 'E';
+        else
+            return 'F';
+    }
+
+    void displayData()
+    {
+        cout << " Student Information ";
+
+        cout << "Name of student - " << name << endl;
+        cout << "Roll number - " << rollNo << endl;
+        cout << "Age - " << age << endl;
+        cout << "Branch - " << branch << endl;
+        cout << "College name - " << college << endl;
+        cout << "Average - " << average << endl;
+        cout << "Grade - " << calculateGrade() << endl;
+    }
+};
+
+int main()
+{
+    student s1;
+
+    s1.getData();
+
+    s1.calculateAverage();
+
+    s1.displayData();
+
+    return 0;
+}
